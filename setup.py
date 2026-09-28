@@ -19,6 +19,7 @@ sonic_dependencies = [
     'sonic-platform-common',
     'sonic-py-common',
     'sonic-yang-mgmt',
+    'sonic-personaforge>=0.1.0',
 ]
 
 for package in sonic_dependencies:

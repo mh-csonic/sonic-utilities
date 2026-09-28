@@ -72,6 +72,7 @@ from . import switchport
 from . import dns
 from . import bgp_cli
 from . import stp
+from . import personaforge
 
 # mock masic APIs for unit test
 try:
@@ -1806,6 +1807,7 @@ config.add_command(liquid_cool.liquid_cool)
 config.add_command(console.console)
 config.add_command(fabric.fabric)
 config.add_command(feature.feature)
+config.add_command(personaforge.personaforge)
 config.add_command(flow_counters.flowcnt_route)
 if hft_common.is_supported_platform():
     config.add_command(hft.hft)
