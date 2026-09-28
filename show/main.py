@@ -342,12 +342,8 @@ cli.add_command(srv6.srv6)
 cli.add_command(switch.switch)
 cli.add_command(icmp.icmp)
 cli.add_command(copp.copp)
-<<<<<<< Updated upstream
-=======
-cli.add_command(orchagent.orchagent)
 if sonic_git_show is not None:
     cli.add_command(sonic_git_show)
->>>>>>> Stashed changes
 
 # syslog module
 cli.add_command(syslog.syslog)
