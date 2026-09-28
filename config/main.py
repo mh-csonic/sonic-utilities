@@ -73,6 +73,14 @@ from . import dns
 from . import bgp_cli
 from . import stp
 
+try:
+    from sonic_config_version.cli.config_sonic_git import sonic_git as sonic_git_config
+except ModuleNotFoundError as exc:
+    if exc.name == 'sonic_config_version':
+        sonic_git_config = None
+    else:
+        raise
+
 # mock masic APIs for unit test
 try:
     if os.environ["UTILITIES_UNIT_TESTING"] == "1" or os.environ["UTILITIES_UNIT_TESTING"] == "2":
@@ -1815,6 +1823,12 @@ config.add_command(muxcable.muxcable)
 config.add_command(nat.nat)
 config.add_command(vlan.vlan)
 config.add_command(vxlan.vxlan)
+<<<<<<< Updated upstream
+=======
+config.add_command(evpn_mh.evpn_mh)
+if sonic_git_config is not None:
+    config.add_command(sonic_git_config)
+>>>>>>> Stashed changes
 
 # add stp commands
 config.add_command(stp.spanning_tree)
