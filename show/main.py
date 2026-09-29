@@ -73,6 +73,7 @@ from . import srv6
 from . import switch
 from . import icmp
 from . import copp
+from . import personaforge
 
 # Global Variables
 PLATFORM_JSON = 'platform.json'
@@ -307,6 +308,7 @@ cli.add_command(chassis_modules.chassis)
 cli.add_command(dropcounters.dropcounters)
 cli.add_command(fabric.fabric)
 cli.add_command(feature.feature)
+cli.add_command(personaforge.personaforge)
 cli.add_command(fgnhg.fgnhg)
 cli.add_command(flow_counters.flowcnt_route)
 cli.add_command(flow_counters.flowcnt_trap)
