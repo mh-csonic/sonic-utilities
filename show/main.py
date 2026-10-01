@@ -74,6 +74,14 @@ from . import switch
 from . import icmp
 from . import copp
 
+try:
+    from sonic_config_version.cli.show_sonic_git import sonic_git as sonic_git_show
+except ModuleNotFoundError as exc:
+    if exc.name == 'sonic_config_version':
+        sonic_git_show = None
+    else:
+        raise
+
 # Global Variables
 PLATFORM_JSON = 'platform.json'
 HWSKU_JSON = 'hwsku.json'
@@ -334,6 +342,8 @@ cli.add_command(srv6.srv6)
 cli.add_command(switch.switch)
 cli.add_command(icmp.icmp)
 cli.add_command(copp.copp)
+if sonic_git_show is not None:
+    cli.add_command(sonic_git_show)
 
 # syslog module
 cli.add_command(syslog.syslog)
